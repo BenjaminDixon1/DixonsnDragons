@@ -1,0 +1,29 @@
+attacker = {'name': 'attacker', 'light': 0, 'heavy': 0, 'damage': 0}
+defender = {'name': 'defender', 'light': 0, 'heavy': 0, 'damage': 0}
+
+ajax = {'name': 'Ajax', 'light': 17, 'heavy': 12, 'damage': 30}
+hilde = {'name': 'Hilde', 'light': 18, 'heavy': 11, 'damage': 30}
+jarud = {'name': 'Jarud', 'light': 9, 'heavy': 10, 'damage': 5}
+hero = {'name': 'Hero', 'light': 24, 'heavy': 28, 'damage': 5}
+ship_guard = {'name': 'Ship Guard', 'light': 23, 'heavy': 24, 'damage': 30}
+slave = {'name': 'Slave', 'light': 10, 'heavy': 11, 'damage': 5}
+
+attacker = hilde
+defender = ship_guard
+
+
+light_attack = (attacker['light']/defender['light']) * 60
+
+import random
+attack_result = random.choices(['attack_yes', 'attack_no', 'attack_yes', 'attack_no'], [light_attack, 90-light_attack, (light_attack + 90-light_attack)*0.05, (light_attack + 90-light_attack)*0.05])[0]
+print (attack_result)
+
+if attack_result == 'attack_yes':
+    damage_dealt = (attacker['damage'])*random.choices([0.8, 0.9, 1.0, 1.1, 1.2], [20, 20, 20, 20, 20])[0]
+    print(defender['name'], ' suffers ', damage_dealt, ' damage')
+
+else:
+    print (defender['name'], ' may repost')
+
+
+
