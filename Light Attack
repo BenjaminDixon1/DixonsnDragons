@@ -33,50 +33,28 @@ elif  defender == 'jarud':
 elif  attacker == 'slave':
         defender = slave
 
+def attack(attacker_mod,defender_mod, base_chance, damage1, damage2, damage3, damage4, damage5, action_type):
+   attack_calculation = (attacker_mod/defender_mod) * base_chance
+   attack_result = random.choices(['attack_yes', 'attack_no', 'attack_yes', 'attack_no'], [attack_calculation, 90 - attack_calculation, (attack_calculation + (90 - attack_calculation)) * 0.05, (attack_calculation + (90 - attack_calculation)) * 0.05])[0]
+   if attack_result == 'attack_yes':
+      damage_dealt = (attacker['damage']) * random.choices([damage1, damage2, damage3, damage4, damage5], [20, 20, 20, 20, 20])[0]
+      print(action_type, 'successful,', defender['name'], ' suffers ', damage_dealt, ' damage')
+   else:
+      print(action_type, 'unsuccessful,', defender['name'], ' may repost')
+
 action_choice = input('What is the action (light_attack, light_repost, heavy_attack, heavy_repost)?')
 
 if action_choice == 'light_attack':
-   light_attack = (attacker['light']/defender['light']) * 60
-   attack_result = random.choices(['attack_yes', 'attack_no', 'attack_yes', 'attack_no'], [light_attack, 90-light_attack, (light_attack + (90-light_attack))*0.05, (light_attack + (90-light_attack))*0.05])[0]
-   print (attack_result)
-   if attack_result == 'attack_yes':
-      damage_dealt = (attacker['damage'])*random.choices([0.8, 0.9, 1.0, 1.1, 1.2], [20, 20, 20, 20, 20])[0]
-      print(defender['name'], ' suffers ', damage_dealt, ' damage')
-   else:
-      print (defender['name'], ' may repost')
-
+    attack(attacker['light'], defender['light'], 60, 0.8, 0.9, 1.0, 1.1, 1.2, 'attack')
 
 elif action_choice == 'heavy_attack':
-   heavy_attack = (attacker['heavy']/defender['heavy']) * 40
-   attack_result = random.choices(['attack_yes', 'attack_no', 'attack_yes', 'attack_no'], [heavy_attack, 90-heavy_attack, (heavy_attack + (90-heavy_attack))*0.05, (heavy_attack + (90-heavy_attack))*0.05])[0]
-   print (attack_result)
-   if attack_result == 'attack_yes':
-      damage_dealt = (attacker['damage'])*random.choices([1.0, 1.5, 2.0, 2.5, 3.0], [20, 20, 20, 20, 20])[0]
-      print(defender['name'], ' suffers ', damage_dealt, ' damage')
-   else:
-      print (defender['name'], ' may repost')
-
+   attack(attacker['heavy'],defender['heavy'], 40, 1.0, 1.5, 2.0, 2.5, 3.0, 'attack')
 
 elif action_choice == 'light_repost':
-    light_repost = (attacker['light'] / defender['light']) * 70
-    repost_result = random.choices(['repost_yes', 'repost_no', 'repost_yes', 'repost_no'], [light_repost, 90-light_repost, (light_repost + (90-light_repost))*0.05,  (light_repost + (90-light_repost)) * 0.05])[0]
-    print(repost_result)
-    if repost_result == 'repost_yes':
-        damage_dealt = (attacker['damage']) * random.choices([0.8, 0.9, 1.0, 1.1, 1.2], [20, 20, 20, 20, 20])[0]
-        print(defender['name'], ' suffers ', damage_dealt, ' damage')
-    else:
-        print(defender['name'], ' may counter-repost')
-
+    attack(attacker['light'],defender['light'], 70, 0.8, 0.9, 1.0, 1.1, 1.2, 'repost')
 
 elif action_choice == 'heavy_repost':
-    heavy_repost = (attacker['heavy'] / defender['heavy']) * 50
-    repost_result = random.choices(['repost_yes', 'repost_no', 'repost_yes', 'repost_no'], [heavy_repost, 90-heavy_repost, (heavy_repost + (90-heavy_repost)) * 0.05, (heavy_repost + (90-heavy_repost)) * 0.05])[0]
-    print(repost_result)
-    if repost_result == 'repost_yes':
-        damage_dealt = (attacker['damage']) * random.choices([1.0, 1.5, 2.0, 2.5, 3.0], [20, 20, 20, 20, 20])[0]
-        print(defender['name'], ' suffers ', damage_dealt, ' damage')
-    else:
-        print(defender['name'], ' may counter-repost')
+    attack(attacker['light'],defender['light'], 50, 1.0, 1.5, 2.0, 2.5, 3.0, 'repost')
 
 
 
