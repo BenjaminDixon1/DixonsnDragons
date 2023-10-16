@@ -1,0 +1,14 @@
+
+ajax = {'name': 'Ajax', 'light': 17, 'heavy': 12, 'damage': 30, 'health': 45, 'xp': 0, 'level': 1, 'AR': 0}
+hilde = {'name': 'Hilde', 'light': 18, 'heavy': 11, 'damage': 30, 'health': 25.5, 'xp': 0, 'level': 1, 'AR': 0}
+jarud = {'name': 'Jarud', 'light': 9, 'heavy': 10, 'damage': 5, 'health': 62, 'xp': 0, 'level': 1, 'AR': 0}
+guard = {'name': 'Guard', 'light': 23, 'heavy': 24, 'damage': 30, 'health': 45, 'charisma': 9, 'perception': 7, 'xp': 0, 'level': 1, 'AR': 0}
+slave = {'name': 'Slave', 'light': 10, 'heavy': 11, 'damage': 5, 'health': 45, 'charisma': 9, 'perception': 7, 'xp': 0, 'level': 1, 'AR': 0}
+darius = {'name': 'Darius', 'light': 20, 'heavy': 20, 'damage': 30, 'health': 100,'charisma': 15, 'perception': 14, 'xp': 0, 'level': 1, 'AR': 0}
+aspathanes = {'name': 'Aspacanā', 'light': 28, 'heavy': 33, 'damage': 30, 'health': 130, 'charisma': 9, 'perception': 7, 'xp': 3, 'level': 1, 'AR': 0}
+intaphranes = {'name': 'Vindafarna', 'light': 30, 'heavy': 30, 'damage': 30, 'health': 110,'charisma': 8, 'perception': 10, 'xp': 0, 'level': 1, 'AR': 0}
+megabyzus = {'name': 'Bagabuxša', 'light': 19, 'heavy': 24, 'damage': 30, 'health': 140,'charisma': 9, 'perception': 6, 'xp': 3, 'level': 1, 'AR': 0}
+
+
+character_references = {'ajax': ajax, 'hilde': hilde, 'jarud': jarud, 'slave': slave, 'guard': guard, 'darius': darius, 'aspathanes': aspathanes, 'intaphranes': intaphranes, 'megabyzus': megabyzus}
+
